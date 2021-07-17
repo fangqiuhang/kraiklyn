@@ -1,5 +1,4 @@
-<em><strong>{{ $word := .Get 0 }}
-{{ if eq $word "MUST"}}必须
+<em><strong>{{ $word := .Get 0 }}{{ if eq $word "MUST"}}必须
 {{ else if eq $word "MUST_NOT" }}必须不
 {{ else if eq $word "REQUIRED"}}需要
 {{ else if eq $word "SHALL"}}强烈要求
