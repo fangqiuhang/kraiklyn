@@ -1,9 +1,9 @@
     {{ partial "section.html" . }}
 {{ if .Pages }}
     {{ range .Pages.ByWeight }}
-        {{ if .IsSection }}
+        {{ if (and .IsSection (ne .Params.rank "sub_page")) }}
             {{ partial "section_list.html" . }}
-        {{ else }}
+        {{ else if ne .Params.rank "sub_page" }}
             {{ partial "section.html" . }}
         {{ end }}
     {{ end }}

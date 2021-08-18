@@ -1,12 +1,14 @@
+{{ if eq .Params.rank "sub_page" }}
+
 {{ partial "head.html" . }}
 {{ partial "sidebar.html" . }}
 <div class="content">
     {{ with .Sections }}
         {{ range .ByWeight }}
-            {{ if ne .Params.rank "sub_page" }}
-                {{ partial "section_list.html" . }}
-            {{ end }}
+            {{ partial "section_list.html" . }}
         {{ end }}
     {{ end }}
 </div>
 {{ partial "tail.html" . }}
+
+{{ end }}

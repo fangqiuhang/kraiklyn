@@ -1,7 +1,12 @@
-<div class="sidebar sidebar-{{ .Site.Params.sidebarColor}}">
+<div {{ with .Params.siteColour }}class="sidebar sidebar-{{ . }}"{{ else }}class="sidebar sidebar-{{ .Site.Params.sidebarColor}}"{{ end }}>
     <div class="navigation">
+      {{ if .IsHome }}
         {{ partial "logo.html" }}
         <h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+      {{ else }}
+        <div><a href="/">在下秋航</a></div>
+        <h1 class="site-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+      {{ end }}
 
 
         <nav class="internal">
@@ -9,7 +14,16 @@
         </nav>
 
         <nav class="external">
+          {{ if .IsHome }}
             <div class="external-title">{{ .Site.Params.externalTitle }}</div>
+          {{ end }}
+            <ul id="shortcuts">
+                {{ with .Sections }}{{ range .ByWeight }}
+                    {{ partial "menu_sub_page_list.html" . }}
+                {{ end }}{{ end }}
+            </ul>
+            <br>
+          {{ if .IsHome }}
             {{ with .Site.Menus.shortcuts }}
             <ul id="shortcuts">
                 {{ range sort . "Weight" }}
@@ -21,6 +35,7 @@
                 {{ end }}
             </ul>
             {{ end }}
+          {{ end }}
         </nav>
     </div>
 

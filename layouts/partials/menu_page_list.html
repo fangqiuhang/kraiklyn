@@ -1,11 +1,12 @@
+{{ if ne .Params.rank "sub_page" }}
     <li>
         <a href="#{{ .Params.anchor }}">{{ .Title }}</a>
 {{ if .Pages }}
         <ul>
             {{ range .Pages.ByWeight }}
-                {{ if .IsSection }}
+                {{ if (and .IsSection (ne .Params.rank "sub_page")) }}
                     {{ partial "menu_page_list.html" . }}
-                {{ else }}
+                {{ else if .IsPage }}
                     <li><a href="#{{ .Params.anchor }}">{{ .Title }}</a></li>
                 {{ end }}
             {{ end }}
@@ -13,3 +14,4 @@
 {{ end }}
     </li>
 
+{{ end }}
