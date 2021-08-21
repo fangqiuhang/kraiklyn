@@ -1,5 +1,6 @@
 html, body {
   font-family: "Open Sans", sans-serif;
+  color: #363636;
   height: 100%;
 }
 
@@ -35,6 +36,7 @@ html, body {
   text-align: center;
   padding: 1rem 1rem;
   color: white;
+  background-color: #363636;
   display: flex;
   flex-direction: column;
 }
@@ -64,9 +66,6 @@ html, body {
 }
 .sidebar.sidebar-orange {
   background-color: #DAA35C;
-}
-.sidebar.sidebar-black {
-  background-color: #000000;
 }
 @media (min-width: 48em) {
   .sidebar {
@@ -180,71 +179,14 @@ nav {
   content: "Warning";
 }
 
-
-.block.ref {
-  margin: 1em 0em 1em 1em;
-  padding: 0 3px 3px 9px;
-  max-width: 800px;
-  position: relative;
-  overflow-wrap: break-word;
-  background: WhiteSmoke;
-  border-top: 0px solid;
-}
-
-.block.block.ref:before {
-  position: absolute;
-  top: 0px;
-  left: 10px;
-}
-
-.block.ref pre {
-  margin: 0 0 0 0;
-}
-
-.block.ref p {
-  margin: 10px 0 0 0;
-}
-
-/* References */
-.out_ref {
-  margin: 1em 0em 1em 0em;
-  padding: 0 0 0 3px;
-  border-top: 3px solid;
-  position: relative;
-  /*overflow-wrap: break-word;*/
-}
-
-.out_ref p {
-  display: block;
-  margin: 0em 0em 0em 0em;
-}
-
 /* Section of the page */
 section.page {
   margin-bottom: 3em;
 }
 
 section.page h1 {
-  border-left: 4px solid;
+  border-left: 3px solid #363636;
   padding-left: 0.5em;
-  margin-bottom: 0;
-}
-
-section.page h2 {
-  border-left: 3px solid;
-  padding-left: 0.6em;
-  margin-bottom: 0;
-}
-
-section.page h3 {
-  border-left: 2px solid;
-  padding-left: 0.7em;
-  margin-bottom: 0;
-}
-
-section.page h4 {
-  border-left: 1px solid;
-  padding-left: 0.7em;
   margin-bottom: 0;
 }
 
@@ -252,10 +194,17 @@ section.page .content {
   margin-left: 0.5em;
 }
 
-section.page h1 a, section.page h2 a, section.page h3 a, section.page h4 a,
-section.page h1 a:hover, section.page h2 a:hover, section.page h3 a:hover, section.page h4 a:hover,
-section.page h1 a:visited, section.page h2 a:visited, section.page h3 a:visited, section.page h4 a:visited {
+section.page h1 a,
+section.page h1 a:hover,
+section.page h1 a:visited {
   text-decoration: none;
+  color: #363636;
+}
+
+section.page a,
+section.page a:hover,
+section.page a:visited {
+  color: #363636;
 }
 
 section div pre {
