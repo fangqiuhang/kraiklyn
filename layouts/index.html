@@ -5,6 +5,8 @@
         {{ range .ByWeight }}
             {{ if ne .Params.rank "sub_page" }}
                 {{ partial "section_list.html" . }}
+            {{ else if .Params.hascontent }}
+                {{ partial "section.html" . }}
             {{ end }}
         {{ end }}
     {{ end }}

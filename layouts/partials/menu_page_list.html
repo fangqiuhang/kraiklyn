@@ -4,9 +4,9 @@
 {{ if .Pages }}
         <ul>
             {{ range .Pages.ByWeight }}
-                {{ if (and .IsSection (ne .Params.rank "sub_page")) }}
+                {{ if .IsSection }}
                     {{ partial "menu_page_list.html" . }}
-                {{ else if .IsPage }}
+                {{ else }}
                     <li><a href="#{{ .Params.anchor }}">{{ .Title }}</a></li>
                 {{ end }}
             {{ end }}
@@ -14,4 +14,6 @@
 {{ end }}
     </li>
 
+{{ else if .Params.hascontent }}
+    <li><a href="#{{ .Params.anchor }}">{{ .Title }}</a></li>
 {{ end }}
